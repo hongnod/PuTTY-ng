@@ -5,6 +5,7 @@
 #include "base/logging.h"
 #include "base/memory/scoped_ptr.h"
 #include "base/string_util.h"
+#include <string>
 
 #include "SkBitmap.h"
 #include "SkUnPreMultiply.h"

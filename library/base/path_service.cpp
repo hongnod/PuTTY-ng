@@ -5,7 +5,7 @@
 #include <shellapi.h>
 #include <shlobj.h>
 
-#include <hash_map>
+#include <unordered_map>
 
 #include "file_path.h"
 #include "file_util.h"
@@ -24,7 +24,7 @@ namespace base
 namespace
 {
 
-    typedef stdext::hash_map<int, FilePath> PathMap;
+    typedef std::unordered_map<int, FilePath> PathMap;
 
     // We keep a linked list of providers.  In a debug build we ensure that no two
     // providers claim overlapping keys.

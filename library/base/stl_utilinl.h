@@ -54,7 +54,7 @@ void STLReserveIfNeeded(T* obj, int new_size)
 // 对容器区间的指针调用delete(非数组版本)操作.
 // 注意: 本可以实现一个DeleteObject仿函数, 调用for_each()进行操作. 这样需要
 // 引入algorithm.h, 代价较高.
-// 对于hash_[multi]set集合, 要注意在迭代器递增后再进行删除操作, 因为hash_set
+// 对于hash_[multi]set集合, 要注意在迭代器递增后再进行删除操作, 因为unordered_set
 // 在迭代器递增的时候可能会对迭代器调用哈希函数, 导致访问野指针.
 template<class ForwardIterator>
 void STLDeleteContainerPointers(ForwardIterator begin, ForwardIterator end)
@@ -213,7 +213,7 @@ inline bool HashMapEquality(const HashMap& map_a, const HashMap& map_b)
 // 以下函数用于清理元素指向分配内存的STL容器.
 
 // STLDeleteElements()删除STL容器中的所有元素并清理容器. 函数适合用于vector、set、
-// hash_set以及任何定义begin()、end()和clear()方法的STL容器.
+// unordered_set以及任何定义begin()、end()和clear()方法的STL容器.
 //
 // 如果容器为空, 函数无任何操作.
 //
@@ -440,7 +440,7 @@ std::vector<T> SetToVector(const std::set<T>& values)
     return result;
 }
 
-// 测试set、map、hash_set或者hash_map是否含有指定key. 存在返回true.
+// 测试set、map、unordered_set或者unordered_map是否含有指定key. 存在返回true.
 template<typename Collection, typename Key>
 bool ContainsKey(const Collection& collection, const Key& key)
 {

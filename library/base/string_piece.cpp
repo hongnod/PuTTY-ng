@@ -1,6 +1,6 @@
 
 #include "string_piece.h"
-
+#include <sstream>
 #include <algorithm>
 
 std::ostream& operator<<(std::ostream& o, const base::StringPiece& piece)

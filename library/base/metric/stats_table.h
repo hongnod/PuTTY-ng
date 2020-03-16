@@ -18,7 +18,7 @@
 
 #pragma once
 
-#include <hash_map>
+#include <unordered_map>
 #include <string>
 
 #include "base/synchronization/lock.h"
@@ -130,7 +130,7 @@ namespace base
     private:
         class Private;
         struct TLSData;
-        typedef stdext::hash_map<std::string, int> CountersMap;
+        typedef std::unordered_map<std::string, int> CountersMap;
 
         // Returns the space occupied by a thread in the table.  Generally used
         // if a thread terminates but the process continues.  This function

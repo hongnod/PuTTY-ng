@@ -98,7 +98,7 @@
 
 #pragma once
 
-#include <hash_set>
+#include <unordered_set>
 #include <vector>
 
 #include "string_piece.h" // For implicit conversions.
