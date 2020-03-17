@@ -136,7 +136,7 @@ namespace view
 
         typedef std::map<View*, Data> ViewToDataMap;
 
-        typedef std::map<const ui::Animation*, View*> AnimationToViewMap;
+        typedef std::map<ui::Animation*, View*> AnimationToViewMap;
 
         // Removes references to |view| and its animation. This does NOT delete the
         // animation or delegate.

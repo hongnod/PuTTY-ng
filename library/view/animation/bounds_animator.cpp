@@ -209,9 +209,9 @@ namespace view
     void BoundsAnimator::AnimationEndedOrCanceled(const ui::Animation* animation,
         AnimationEndType type)
     {
-        DCHECK(animation_to_view_.find(animation) != animation_to_view_.end());
+        DCHECK(animation_to_view_.find(const_cast<ui::Animation*>(animation)) != animation_to_view_.end());
 
-        View* view = animation_to_view_[animation];
+        View* view = animation_to_view_[const_cast<ui::Animation*>(animation)];
         DCHECK(view);
 
         // Make a copy of the data as Remove empties out the maps.
@@ -237,9 +237,9 @@ namespace view
 
     void BoundsAnimator::AnimationProgressed(const ui::Animation* animation)
     {
-        DCHECK(animation_to_view_.find(animation) != animation_to_view_.end());
+        DCHECK(animation_to_view_.find(const_cast<ui::Animation*>(animation)) != animation_to_view_.end());
 
-        View* view = animation_to_view_[animation];
+        View* view = animation_to_view_[const_cast<ui::Animation*>(animation)];
         DCHECK(view);
         const Data& data = data_[view];
         gfx::Rect new_bounds = animation->CurrentValueBetween(

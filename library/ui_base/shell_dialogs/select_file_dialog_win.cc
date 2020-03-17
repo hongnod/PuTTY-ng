@@ -428,7 +428,7 @@ class SelectFileDialogImpl : public ui::SelectFileDialog,
       gfx::NativeWindow owning_window,
       void* params) OVERRIDE;
 
- private:
+ protected:
   virtual ~SelectFileDialogImpl();
 
   // A struct for holding all the state necessary for displaying a Save dialog.
